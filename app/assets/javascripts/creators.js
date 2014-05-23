@@ -27,8 +27,6 @@ var Creator = function () {
     Datatable.init('#datatable', varColumns);
   };
 
-  var initForm = function () {  };
-
   return {
     index: function () {
       initTable();
