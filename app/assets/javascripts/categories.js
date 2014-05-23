@@ -21,6 +21,7 @@ var Category = function () {
         null,
         null,
         null,
+        null,
         { "sortable": false, "render": renderActionLinks }
     ];
     Datatable.init('#datatable', varColumns);
