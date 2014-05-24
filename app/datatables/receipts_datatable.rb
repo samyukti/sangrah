@@ -7,7 +7,7 @@ private
        receipt.received_date,
        receipt.member.name,
        receipt.kind.titleize,
-       receipt.mode,
+       receipt.mode.titleize,
        receipt.amount,
        action_links(receipt)
       ]
