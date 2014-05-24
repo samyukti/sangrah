@@ -6,7 +6,7 @@ private
       [copy.id,
        copy.item.name,
        copy.name,
-       copy.quality,
+       copy.quality.titleize,
        copy.status.titleize,
        copy.issued,
        action_links(copy)
