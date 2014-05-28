@@ -27,11 +27,17 @@ Sangrah::Application.routes.draw do
   resources :categories do
     get :copy
     patch :lock, :unlock, :archive, :unarchive
+    collection do
+      match 'table', to: 'categories#table', via: [:get]
+    end
   end
 
   resources :creators do
     get :copy
     patch :lock, :unlock, :archive, :unarchive
+    collection do
+      match 'table', to: 'creators#table', via: [:get]
+    end
   end
 
   resources :items do
@@ -47,6 +53,7 @@ Sangrah::Application.routes.draw do
     get :copy
     patch :lock, :unlock, :archive, :unarchive
     collection do
+      match 'table', to: 'copies#table', via: [:get]
       match 'select', to: 'copies#select', via: [:get]
     end
   end
@@ -54,6 +61,9 @@ Sangrah::Application.routes.draw do
   resources :memberships do
     get :copy
     patch :lock, :unlock, :archive, :unarchive
+    collection do
+      match 'table', to: 'memberships#table', via: [:get]
+    end
   end
 
   resources :members do
@@ -61,20 +71,30 @@ Sangrah::Application.routes.draw do
     get 'photo(/:version)', to: 'members#photo'
     patch :lock, :unlock, :archive, :unarchive
     collection do
+      match 'table', to: 'members#table', via: [:get]
       match 'select', to: 'members#select', via: [:get]
     end
   end
 
   resources :issues do
     patch :cancel, :close
+    collection do
+      match 'table', to: 'issues#table', via: [:get]
+    end
   end
 
   resources :reservations do
     patch :cancel, :close
+    collection do
+      match 'table', to: 'reservations#table', via: [:get]
+    end
   end
 
   resources :receipts do
     patch :cancel, :approve
+    collection do
+      match 'table', to: 'receipts#table', via: [:get]
+    end
   end
 
   match 'search', to: 'search#results', via: [:get]
