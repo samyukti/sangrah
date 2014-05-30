@@ -1,5 +1,5 @@
 class CopiesDatatable < GenericDatatable
-private
+  private
 
   def data
     records.map do |copy|

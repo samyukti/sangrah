@@ -1,5 +1,5 @@
 class ReceiptsDatatable < GenericDatatable
-private
+  private
 
   def data
     records.map do |receipt|

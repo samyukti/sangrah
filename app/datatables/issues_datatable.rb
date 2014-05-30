@@ -1,5 +1,5 @@
 class IssuesDatatable < GenericDatatable
-private
+  private
 
   def data
     records.map do |issue|
